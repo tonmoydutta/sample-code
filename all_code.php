@@ -177,8 +177,14 @@ add_action( 'after_setup_theme', 'mytheme_add_woocommerce_support' );
     <div class="item"><div class="spons">
    <?php the_post_thumbnail('thumbnail', array('class' => 'img-fluid',160,65));?>
       <!-- <img class="img-fluid" src="<?php //bloginfo('template_directory'); ?>/images/spons1.jpg" alt="speaker"> --></div>
+                      or
+        <?php image_src = wp_get_attachment_image_src( get_post_thumbnail_id(),'full' );
+                      echo '<img src="' . $image_src[0]  . '" width="100%"  />'; ?>
     </div>
 
                 <?php  endwhile; 
                  wp_reset_postdata(); 
                 ?>
+        
+        
+        
